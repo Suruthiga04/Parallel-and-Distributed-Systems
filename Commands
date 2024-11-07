@@ -1,0 +1,7 @@
+To compile,
+mpicc -o out filename.c
+
+To run,
+mpirun -np num out
+
+num->Give number of processes as input
