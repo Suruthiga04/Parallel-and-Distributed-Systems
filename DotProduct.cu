@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
-_global_ void mult(int *a,  int *b, int *c, int n){
+__global__ void mult(int *a,  int *b, int *c, int n){
 int tid = threadIdx.x;
 if(tid < n){
 c[tid] = a[tid]*b[tid];
 }
 }
-_global_ void add(int *c, int n){
+__global__ void add(int *c, int n){
 int tid = threadIdx.x;
 for(int s = 1;s < n;s=s*2){
 if(tid % (2*s) == 0 && (tid+s)<n){
