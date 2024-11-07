@@ -3,12 +3,12 @@
 #define row 4
 #define col 4
 
-global void transpose(int *a)
+__global__ void transpose(int *a)
 {
 int x=blockIdx.x;
 int y=blockIdx.y;
 
-shared  int p[col*row];
+__shared__ int p[col*row];
 p[y*row+x]=a[col*x+y];
 __syncthreads();
 a[y*row+x]=p[y*row+x];
